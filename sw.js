@@ -3,7 +3,7 @@
  * 다른 주소(AI 서버 등)로 가는 요청은 건드리지 않는다.
  * VERSION 과 FILES 는 build_mobile.py 가 채운다.
  */
-const VERSION = "300f736617";
+const VERSION = "c555be7c4d";
 const CACHE = `memoinall-${VERSION}`;
 const FILES = ["./", "index.html", "app.js", "exchange.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png", "icons/apple-touch-icon.png", "qrshare.js", "vendor/qrcode.js"];
 
