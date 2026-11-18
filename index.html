@@ -249,7 +249,10 @@
       <button class="btn primary small" id="addEvent" type="button">+ 일정 추가</button>
     </div>
     <div id="dayList" class="card" style="padding:4px 14px"></div>
-    <h2>다가오는 일정</h2>
+    <div class="row" style="margin:22px 0 10px">
+      <h2 style="margin:0;flex:1">다가오는 일정</h2>
+      <button class="btn small" id="calSend" type="button">PC로 보내기</button>
+    </div>
     <div id="upcoming" class="card" style="padding:4px 14px"></div>
     <div id="overdueBox" hidden>
       <h2>지난 일 중 안 끝난 것</h2>
@@ -263,7 +266,7 @@
     <h2>PC로 보내기</h2>
     <div class="card">
       <div class="note">메모 목록에서 <b>선택</b>으로 보낼 메모를 고른 뒤 <b>PC로 보내기</b>를 누르면 화면에 QR이 뜹니다.
-        PC 앱의 <b>가져오기·공유 → 동료와 주고받기 → QR 찍기</b>로 웹캠에 비추세요. 인터넷을 거치지 않습니다.</div>
+        PC 앱의 <b>가져오기·공유 → 휴대폰 QR·설치 → QR 찍기</b>로 웹캠에 비추세요. 인터넷을 거치지 않습니다.</div>
       <div class="note" style="margin-top:8px">사내 정보 보호를 위해 주고받기는 <b>휴대폰 → PC 한 방향</b>만 됩니다.
         PC의 메모를 이 앱으로 가져올 수는 없습니다.</div>
       <div class="row" style="margin-top:12px"><button class="btn block" id="pickToSend" type="button">보낼 메모 고르기</button></div>
@@ -355,6 +358,7 @@
 <dialog class="sheet" id="sendDlg" aria-labelledby="sendTitle">
   <div class="sheet-head"><h3 id="sendTitle">보내기</h3><button class="btn ghost x" data-close type="button" aria-label="닫기">×</button></div>
   <div class="sheet-body">
+    <div id="sendPick" hidden></div>
     <label class="field"><span>비밀번호 (선택)</span>
       <input id="sendPw" type="password" autocomplete="new-password" placeholder="정하면 받는 쪽도 이 비밀번호가 있어야 엽니다" /></label>
     <div class="note" id="sendPwNote"></div>
@@ -409,6 +413,7 @@
   </div>
   <div class="sheet-foot">
     <button class="btn danger" id="evDel" type="button">삭제</button>
+    <button class="btn" id="evSend" type="button">PC로 보내기</button>
     <button class="btn primary" id="evSave" type="button">저장</button>
   </div>
 </dialog>
